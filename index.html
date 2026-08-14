@@ -1,0 +1,355 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training Set — Aug 5 to Oct 13</title>
+<meta name="theme-color" content="#dfe4ea">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Ten Weeks">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ozalid:#dfe4ea;
+    --sheet:#f2f4f6;
+    --ink:#182338;
+    --ink-60:#5c6779;
+    --ink-25:#aab2be;
+    --rule:#c3cad4;
+    --redline:#c8102e;
+    --graphite:#8d95a3;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--ozalid),var(--ozalid));
+    color:var(--ink);
+    font-family:"Barlow",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 14px 80px}
+
+  /* ---------- title block ---------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:var(--sheet);
+    border-bottom:2px solid var(--ink);
+    margin:0 -14px 22px;
+    padding:14px 18px 12px;
+  }
+  .hd-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  h1{
+    font-family:"Barlow Condensed",Oswald,"Arial Narrow",sans-serif;
+    font-weight:700;font-size:clamp(26px,5.4vw,40px);
+    letter-spacing:.045em;text-transform:uppercase;
+    margin:0;line-height:.95;
+  }
+  h1 em{font-style:normal;color:var(--redline)}
+  .meta{
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-60);
+    text-align:right;line-height:1.7;
+  }
+  /* progress drawn as a drafting scale bar */
+  .scale{margin-top:12px}
+  .scale-track{
+    position:relative;height:15px;border:1px solid var(--ink);
+    background:repeating-linear-gradient(90deg,transparent 0 9.9%,var(--rule) 9.9% 10%);
+  }
+  .scale-fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--ink);transition:width .35s ease}
+  .scale-ticks{display:flex;justify-content:space-between;margin-top:3px;
+    font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;color:var(--ink-25)}
+  .scale-read{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--ink-60);margin-top:7px;
+  }
+  .scale-read b{color:var(--ink);font-weight:600}
+  .jump{
+    background:none;border:1px solid var(--ink);color:var(--ink);cursor:pointer;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;
+    text-transform:uppercase;padding:4px 9px;
+  }
+  .jump:hover{background:var(--ink);color:var(--sheet)}
+
+  /* ---------- sheets ---------- */
+  .sheet{background:var(--sheet);border:1px solid var(--ink);margin-bottom:18px;display:flex}
+  .stub{
+    flex:0 0 84px;border-right:1px solid var(--ink);padding:12px 10px;
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .stub .wk{
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:30px;
+    line-height:.85;letter-spacing:.02em;
+  }
+  .stub .lbl,.stub .rng{
+    font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-60);line-height:1.5;
+  }
+  .phase-tag{
+    margin-top:auto;font-family:"IBM Plex Mono",monospace;font-size:8.5px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--sheet);
+    background:var(--graphite);padding:3px 5px;
+  }
+  .phase-2{background:var(--ink-60)} .phase-3{background:var(--ink)}
+  .days{flex:1;min-width:0}
+
+  .day{border-bottom:1px solid var(--rule);padding:11px 14px 12px;position:relative}
+  .day:last-child{border-bottom:0}
+  .day.rest{padding:8px 14px;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(24,35,56,.045) 6px 12px)}
+  .day.today{background:#fff}
+  .day.today:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--redline)}
+  .dh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .date{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+    color:var(--ink-60);text-transform:uppercase;flex:0 0 84px;
+  }
+  .sess{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:19px;
+    letter-spacing:.05em;text-transform:uppercase;
+  }
+  .sess.quiet{color:var(--graphite);font-weight:500}
+  .today-tag{
+    font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.14em;
+    color:var(--redline);border:1px solid var(--redline);padding:1px 5px;
+  }
+  .dur{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.09em;color:var(--ink-25);margin-left:auto}
+
+  ul{list-style:none;margin:8px 0 0 94px;padding:0}
+  @media(max-width:640px){ul{margin-left:0}.date{flex:0 0 auto}}
+  li{margin:0 0 1px}
+  label{
+    display:flex;align-items:flex-start;gap:9px;cursor:pointer;padding:4px 2px;
+    font-size:14.5px;line-height:1.35;
+  }
+  label:hover .box{border-color:var(--redline)}
+  input{position:absolute;opacity:0;width:0;height:0}
+  .box{
+    flex:0 0 15px;height:15px;margin-top:2px;border:1.5px solid var(--ink);
+    background:#fff;position:relative;transition:background .12s;
+  }
+  input:focus-visible + .box{outline:2px solid var(--redline);outline-offset:2px}
+  input:checked + .box{background:var(--ink)}
+  .box:after{
+    content:"";position:absolute;left:4px;top:.5px;width:4px;height:9px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg) scale(0);
+    transition:transform .14s ease;
+  }
+  input:checked + .box:after{transform:rotate(42deg) scale(1)}
+  .txt{flex:1}
+  .txt b{font-weight:600}
+  .txt span{color:var(--ink-60);font-size:13px}
+  input:checked ~ .txt{color:var(--graphite);text-decoration:line-through;text-decoration-color:var(--redline);text-decoration-thickness:1.5px}
+  li.opt label{color:var(--ink-60)}
+  li.opt .box{border-style:dashed}
+
+  footer{
+    margin-top:26px;border-top:1px solid var(--ink);padding-top:12px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-60);
+  }
+  .clear{background:none;border:1px solid var(--rule);color:var(--ink-60);cursor:pointer;
+    font:inherit;padding:5px 10px}
+  .clear:hover{border-color:var(--redline);color:var(--redline)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="hd-top">
+      <h1>Ten Weeks<br>to <em>Oct 13</em></h1>
+      <div class="meta">
+        Bodyweight only · at home<br>
+        5 sessions / week · 7:00 AM<br>
+        Issued 05 Aug 2026
+      </div>
+    </div>
+    <div class="scale">
+      <div class="scale-track"><div class="scale-fill" id="fill"></div></div>
+      <div class="scale-ticks"><span>WK 1</span><span>WK 3</span><span>WK 5</span><span>WK 8</span><span>WK 10</span></div>
+      <div class="scale-read">
+        <span><b id="done">0</b> of <b id="total">0</b> exercises checked · <b id="pct">0%</b></span>
+        <button class="jump" id="jump">Go to today</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="sheets"></main>
+
+  <footer>
+    <span>Add one rep per set each week. Stop two reps short of failure.</span>
+    <button class="clear" id="clear">Clear all checks</button>
+  </footer>
+</div>
+
+<script>
+const KEY = "training:oct13:checks";
+const START = new Date(2026,7,5), END = new Date(2026,9,13);
+const DAYNAME = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+const P1_END = new Date(2026,7,23), P2_END = new Date(2026,8,20);
+const phaseOf = d => d <= P1_END ? 0 : d <= P2_END ? 1 : 2;
+const PHASE_NAME = ["P1 Rebuild","P2 Build","P3 Peak"];
+
+const ex = (n,d)=>({n,d});
+
+const LOWER = [
+  {t:"Lower + Glutes", dur:"25 min", items:[
+    ex("Bodyweight squats","3 × 12"), ex("Reverse lunges","3 × 8 each leg"),
+    ex("Glute bridges","3 × 15"), ex("Wall sit","3 × 30 sec")]},
+  {t:"Lower + Glutes", dur:"27 min", items:[
+    ex("Bodyweight squats","3 × 15"), ex("Reverse lunges","3 × 10 each leg"),
+    ex("Single-leg glute bridge","3 × 10 each leg"), ex("Wall sit","3 × 45 sec"),
+    ex("Calf raises","3 × 20")]},
+  {t:"Lower + Glutes", dur:"30 min", items:[
+    ex("Slow-tempo squats","4 × 15, 3 sec down"), ex("Bulgarian split squat","3 × 10 each leg, back foot on couch"),
+    ex("Single-leg hip thrust","3 × 12 each leg, shoulders on couch"),
+    ex("Wall sit","3 × 60 sec"), ex("Calf raises","3 × 20")]}
+];
+const PUSH = [
+  {t:"Push + Posture", dur:"25 min", items:[
+    ex("Incline pushups","3 × 10, hands on counter"), ex("Pike pushups","3 × 6"),
+    ex("Wall angels","3 × 10"), ex("Doorway chest stretch","2 × 30 sec"), ex("Dead bugs","3 × 8 each side")]},
+  {t:"Push + Posture", dur:"27 min", items:[
+    ex("Knee pushups","3 × 10"), ex("Pike pushups","3 × 8"),
+    ex("Wall angels","3 × 12"), ex("Floor Y-T-W raises","3 × 8 each shape"), ex("Dead bugs","3 × 10 each side")]},
+  {t:"Push + Posture", dur:"30 min", items:[
+    ex("Full pushups","4 × 8"), ex("Pike pushups","3 × 10"),
+    ex("Wall angels","3 × 15"), ex("Floor Y-T-W raises","3 × 10 each shape"), ex("Dead bugs","3 × 12 each side")]}
+];
+const PULL = [
+  {t:"Pull + Core", dur:"25 min", items:[
+    ex("Towel rows","3 × 10, towel over door handle"), ex("Superman hold","3 × 20 sec"),
+    ex("Bird dogs","3 × 8 each side"), ex("Side plank","2 × 20 sec each side")]},
+  {t:"Pull + Core", dur:"27 min", items:[
+    ex("Towel rows","3 × 12"), ex("Table rows","3 × 8, under a sturdy table"),
+    ex("Superman hold","3 × 30 sec"), ex("Bird dogs","3 × 10 each side"), ex("Side plank","3 × 30 sec each side")]},
+  {t:"Pull + Core", dur:"30 min", items:[
+    ex("Table rows","4 × 10"), ex("Towel rows","3 × 15"),
+    ex("Superman hold","3 × 40 sec"), ex("Hollow hold","3 × 20 sec"), ex("Side plank","3 × 45 sec each side")]}
+];
+const CARDIO = [
+  {n:"Stair intervals", d:["6 rounds — up fast, walk down","8 rounds — up fast, walk down","10 rounds — up fast, walk down"]},
+  {n:"Podcast walk",    d:["15 min, brisk and easy","25 min, brisk","25 min, push the pace on hills"]},
+  {n:"Shadowboxing",    d:["5 rounds × 2 min","6 rounds × 2 min","8 rounds × 2 min"]},
+  {n:"HIIT circuit",    d:["4 rounds — high knees / jacks / mountain climbers, 30 on 30 off","6 rounds — high knees / jacks / mountain climbers, 30 on 30 off","8 rounds — high knees / jacks / mountain climbers, 30 on 30 off"]}
+];
+
+function session(d, p, cardioCount){
+  const w = d.getDay();
+  if (w===1) return LOWER[p];
+  if (w===3) return PUSH[p];
+  if (w===5) return PULL[p];
+  if (w===2 || w===4){
+    const c = CARDIO[cardioCount % 4];
+    return {t:"Cardio", dur:["20 min","25 min","20 min"][p], items:[
+      ex(c.n, c.d[p]), ex("Cooldown stretch","3 min — hips, calves, chest")]};
+  }
+  if (w===6) return {t:"Free day", dur:"optional", optional:true, items:[ex("Walk, or nothing at all","optional")]};
+  return null; // Sunday
+}
+
+let state = {};
+
+function render(){
+  const host = document.getElementById("sheets");
+  let html = "", cardioCount = 0, week = 0, open = false, total = 0;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const d = new Date(START);
+  let weekDays = [], weekStart = null;
+
+  const flush = () => {
+    if (!weekDays.length) return;
+    const p = phaseOf(weekDays[0].date);
+    const last = weekDays[weekDays.length-1].date;
+    html += `<section class="sheet"><div class="stub">
+        <div class="lbl">Week</div><div class="wk">${String(week).padStart(2,"0")}</div>
+        <div class="rng">${MON[weekStart.getMonth()]} ${weekStart.getDate()}<br>— ${MON[last.getMonth()]} ${last.getDate()}</div>
+        <div class="phase-tag phase-${p+1}">${PHASE_NAME[p]}</div>
+      </div><div class="days">${weekDays.map(x=>x.html).join("")}</div></section>`;
+    weekDays = [];
+  };
+
+  while (d <= END){
+    if (d.getDay()===1 || weekStart===null){ flush(); week++; weekStart = new Date(d); }
+    const p = phaseOf(d);
+    const s = session(d, p, cardioCount);
+    if (s && s.t==="Cardio") cardioCount++;
+    const key = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+    const isToday = d.getTime()===today.getTime();
+    const dateStr = `${DAYNAME[d.getDay()]} ${MON[d.getMonth()]} ${String(d.getDate()).padStart(2,"0")}`;
+    let dayHtml;
+    if (!s){
+      dayHtml = `<div class="day rest"><div class="dh"><span class="date">${dateStr}</span>
+        <span class="sess quiet">Rest</span></div></div>`;
+    } else {
+      const items = s.items.map((it,i)=>{
+        const id = `${key}|${i}`;
+        if (!s.optional) total++;
+        const on = state[id] ? " checked" : "";
+        return `<li class="${s.optional?"opt":""}"><label><input type="checkbox" data-id="${id}"${on}${s.optional?' data-opt="1"':''}>
+          <span class="box"></span><span class="txt"><b>${it.n}</b> — <span>${it.d}</span></span></label></li>`;
+      }).join("");
+      dayHtml = `<div class="day${isToday?" today":""}"${isToday?' id="today"':''}><div class="dh">
+        <span class="date">${dateStr}</span><span class="sess${s.optional?" quiet":""}">${s.t}</span>
+        ${isToday?'<span class="today-tag">Today</span>':''}<span class="dur">${s.dur}</span></div>
+        <ul>${items}</ul></div>`;
+    }
+    weekDays.push({date:new Date(d), html:dayHtml});
+    d.setDate(d.getDate()+1);
+  }
+  flush();
+  host.innerHTML = html;
+  document.getElementById("total").textContent = total;
+  window.__total = total;
+  tally();
+}
+
+function tally(){
+  const boxes = [...document.querySelectorAll('input[type=checkbox]:not([data-opt])')];
+  const done = boxes.filter(b=>b.checked).length;
+  const pct = window.__total ? Math.round(done/window.__total*100) : 0;
+  document.getElementById("done").textContent = done;
+  document.getElementById("pct").textContent = pct + "%";
+  document.getElementById("fill").style.width = pct + "%";
+}
+
+let saveTimer;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    try { localStorage.setItem(KEY, JSON.stringify(state)); }
+    catch(e){ console.error("Could not save checks:", e); }
+  }, 250);
+}
+
+document.addEventListener("change", e=>{
+  const cb = e.target.closest("input[type=checkbox]");
+  if (!cb) return;
+  if (cb.checked) state[cb.dataset.id] = 1; else delete state[cb.dataset.id];
+  tally(); save();
+});
+
+document.getElementById("jump").addEventListener("click", ()=>{
+  const el = document.getElementById("today");
+  (el || document.querySelector(".sheet")).scrollIntoView({behavior:"smooth", block:"center"});
+});
+document.getElementById("clear").addEventListener("click", ()=>{
+  if (!confirm("Clear every check from Aug 5 to Oct 13?")) return;
+  state = {};
+  document.querySelectorAll("input[type=checkbox]").forEach(b=>b.checked=false);
+  tally(); save();
+});
+
+(function(){
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) state = JSON.parse(raw);
+  } catch(e){ state = {}; }
+  render();
+  const el = document.getElementById("today");
+  if (el) el.scrollIntoView({block:"center"});
+})();
+</script>
