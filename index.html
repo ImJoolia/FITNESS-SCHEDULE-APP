@@ -1,154 +1,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Training Set — Aug 5 to Oct 13</title>
+<title>Neck & Posture — Aug 28 to Mar 30</title>
 <meta name="theme-color" content="#dfe4ea">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Ten Weeks">
+<meta name="apple-mobile-web-app-title" content="Posture">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ozalid:#dfe4ea;
-    --sheet:#f2f4f6;
-    --ink:#182338;
-    --ink-60:#5c6779;
-    --ink-25:#aab2be;
-    --rule:#c3cad4;
-    --redline:#c8102e;
-    --graphite:#8d95a3;
+    --ozalid:#dfe4ea; --sheet:#f2f4f6; --ink:#182338; --ink-60:#5c6779;
+    --ink-25:#aab2be; --rule:#c3cad4; --redline:#c8102e; --graphite:#8d95a3;
+    --anchor:#1d6b52;
   }
   *{box-sizing:border-box}
-  body{
-    margin:0;
-    background:
-      linear-gradient(var(--ozalid),var(--ozalid));
-    color:var(--ink);
-    font-family:"Barlow",system-ui,-apple-system,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:940px;margin:0 auto;padding:0 14px 80px}
+  body{margin:0;background:var(--ozalid);color:var(--ink);
+    font-family:"Barlow",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 70px}
 
-  /* ---------- title block ---------- */
-  header{
-    position:sticky;top:0;z-index:20;
-    background:var(--sheet);
-    border-bottom:2px solid var(--ink);
-    margin:0 -14px 22px;
-    padding:14px 18px 12px;
-  }
-  .hd-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  h1{
-    font-family:"Barlow Condensed",Oswald,"Arial Narrow",sans-serif;
-    font-weight:700;font-size:clamp(26px,5.4vw,40px);
-    letter-spacing:.045em;text-transform:uppercase;
-    margin:0;line-height:.95;
-  }
+  header{background:var(--sheet);border-bottom:2px solid var(--ink);
+    margin:0 -14px 18px;padding:14px 18px 13px}
+  h1{font-family:"Barlow Condensed",sans-serif;font-weight:700;
+    font-size:clamp(22px,4.6vw,30px);letter-spacing:.045em;text-transform:uppercase;
+    margin:0 0 3px;line-height:1}
   h1 em{font-style:normal;color:var(--redline)}
-  .meta{
-    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-    font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-60);
-    text-align:right;line-height:1.7;
-  }
-  /* progress drawn as a drafting scale bar */
-  .scale{margin-top:12px}
-  .scale-track{
-    position:relative;height:15px;border:1px solid var(--ink);
-    background:repeating-linear-gradient(90deg,transparent 0 9.9%,var(--rule) 9.9% 10%);
-  }
-  .scale-fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--ink);transition:width .35s ease}
-  .scale-ticks{display:flex;justify-content:space-between;margin-top:3px;
-    font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;color:var(--ink-25)}
-  .scale-read{
-    display:flex;justify-content:space-between;align-items:baseline;
-    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
-    text-transform:uppercase;color:var(--ink-60);margin-top:7px;
-  }
-  .scale-read b{color:var(--ink);font-weight:600}
-  .jump{
-    background:none;border:1px solid var(--ink);color:var(--ink);cursor:pointer;
-    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;
-    text-transform:uppercase;padding:4px 9px;
-  }
-  .jump:hover{background:var(--ink);color:var(--sheet)}
+  .sub{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-60)}
 
-  /* ---------- sheets ---------- */
-  .sheet{background:var(--sheet);border:1px solid var(--ink);margin-bottom:18px;display:flex}
-  .stub{
-    flex:0 0 84px;border-right:1px solid var(--ink);padding:12px 10px;
-    display:flex;flex-direction:column;gap:6px;
-  }
-  .stub .wk{
-    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:30px;
-    line-height:.85;letter-spacing:.02em;
-  }
-  .stub .lbl,.stub .rng{
-    font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--ink-60);line-height:1.5;
-  }
-  .phase-tag{
-    margin-top:auto;font-family:"IBM Plex Mono",monospace;font-size:8.5px;
-    letter-spacing:.1em;text-transform:uppercase;color:var(--sheet);
-    background:var(--graphite);padding:3px 5px;
-  }
-  .phase-2{background:var(--ink-60)} .phase-3{background:var(--ink)}
-  .days{flex:1;min-width:0}
+  /* today */
+  .today-card{background:#fff;border:2px solid var(--ink);margin-bottom:16px}
+  .tc-head{padding:11px 14px 9px;border-bottom:1px solid var(--rule);
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .tc-date{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--redline)}
+  .tc-title{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:20px;
+    letter-spacing:.05em;text-transform:uppercase}
+  .tc-dur{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.09em;color:var(--ink-25)}
+  .blk{padding:9px 14px 11px}
+  .blk + .blk{border-top:1px solid var(--rule)}
+  .blk-lbl{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--anchor);margin-bottom:5px;display:flex;
+    align-items:center;gap:6px}
+  .blk-lbl:before{content:"";width:7px;height:7px;background:var(--anchor);flex:0 0 auto}
+  .blk.bonus .blk-lbl{color:var(--graphite)}
+  .blk.bonus .blk-lbl:before{background:none;border:1px solid var(--graphite)}
+  .blk-note{font-size:12.5px;color:var(--ink-60);margin:0 0 7px;line-height:1.4}
 
-  .day{border-bottom:1px solid var(--rule);padding:11px 14px 12px;position:relative}
-  .day:last-child{border-bottom:0}
-  .day.rest{padding:8px 14px;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(24,35,56,.045) 6px 12px)}
-  .day.today{background:#fff}
-  .day.today:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--redline)}
-  .dh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .date{
-    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
-    color:var(--ink-60);text-transform:uppercase;flex:0 0 84px;
-  }
-  .sess{
-    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:19px;
-    letter-spacing:.05em;text-transform:uppercase;
-  }
-  .sess.quiet{color:var(--graphite);font-weight:500}
-  .today-tag{
-    font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.14em;
-    color:var(--redline);border:1px solid var(--redline);padding:1px 5px;
-  }
-  .dur{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.09em;color:var(--ink-25);margin-left:auto}
-
-  ul{list-style:none;margin:8px 0 0 94px;padding:0}
-  @media(max-width:640px){ul{margin-left:0}.date{flex:0 0 auto}}
-  li{margin:0 0 1px}
-  label{
-    display:flex;align-items:flex-start;gap:9px;cursor:pointer;padding:4px 2px;
-    font-size:14.5px;line-height:1.35;
-  }
+  ul{list-style:none;margin:0;padding:0}
+  label{display:flex;align-items:flex-start;gap:9px;cursor:pointer;padding:5px 2px;
+    font-size:14.5px;line-height:1.35}
   label:hover .box{border-color:var(--redline)}
   input{position:absolute;opacity:0;width:0;height:0}
-  .box{
-    flex:0 0 15px;height:15px;margin-top:2px;border:1.5px solid var(--ink);
-    background:#fff;position:relative;transition:background .12s;
-  }
+  .box{flex:0 0 16px;height:16px;margin-top:2px;border:1.5px solid var(--ink);
+    background:#fff;position:relative;transition:background .12s}
+  .blk.bonus .box{border-style:dashed;border-color:var(--graphite)}
   input:focus-visible + .box{outline:2px solid var(--redline);outline-offset:2px}
-  input:checked + .box{background:var(--ink)}
-  .box:after{
-    content:"";position:absolute;left:4px;top:.5px;width:4px;height:9px;
+  input:checked + .box{background:var(--ink);border-color:var(--ink)}
+  .box:after{content:"";position:absolute;left:4.5px;top:1px;width:4px;height:9px;
     border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg) scale(0);
-    transition:transform .14s ease;
-  }
+    transition:transform .14s ease}
   input:checked + .box:after{transform:rotate(42deg) scale(1)}
-  .txt{flex:1}
-  .txt b{font-weight:600}
+  .txt{flex:1}.txt b{font-weight:600}
   .txt span{color:var(--ink-60);font-size:13px}
-  input:checked ~ .txt{color:var(--graphite);text-decoration:line-through;text-decoration-color:var(--redline);text-decoration-thickness:1.5px}
-  li.opt label{color:var(--ink-60)}
-  li.opt .box{border-style:dashed}
+  input:checked ~ .txt{color:var(--graphite);text-decoration:line-through;
+    text-decoration-color:var(--redline);text-decoration-thickness:1.5px}
 
-  footer{
-    margin-top:26px;border-top:1px solid var(--ink);padding-top:12px;
-    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  .howto{margin:4px 0 0 25px;font-size:12.5px;color:var(--ink-60);line-height:1.45;
+    border-left:2px solid var(--rule);padding-left:9px}
+
+  /* count strip */
+  .count{background:var(--sheet);border:1px solid var(--ink);padding:11px 14px;
+    margin-bottom:16px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .stat b{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:700;
+    line-height:1;display:block}
+  .stat span{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--ink-60)}
+  .milestone{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);text-align:right;line-height:1.6}
+  .milestone b{color:var(--redline)}
+
+  /* weeks */
+  h2{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-60);margin:22px 0 8px;font-weight:500}
+  details{background:var(--sheet);border:1px solid var(--rule);margin-bottom:5px}
+  details[open]{border-color:var(--ink)}
+  summary{padding:9px 13px;cursor:pointer;display:flex;align-items:center;gap:11px;
+    list-style:none;font-size:14px}
+  summary::-webkit-details-marker{display:none}
+  .wk-n{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+    color:var(--ink-60);flex:0 0 58px}
+  .wk-rng{font-weight:500}
+  .wk-ph{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:8.5px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--sheet);
+    background:var(--graphite);padding:2px 5px}
+  .ph2{background:var(--ink-60)} .ph3{background:var(--ink)}
+  .wk-body{padding:0 13px 11px;font-size:13.5px;color:var(--ink-60);line-height:1.55}
+  .wk-body b{color:var(--ink);font-weight:600}
+  .wk-day{display:flex;gap:10px;padding:4px 0;border-top:1px solid var(--rule)}
+  .wk-day .d{font-family:"IBM Plex Mono",monospace;font-size:10.5px;flex:0 0 46px;
+    color:var(--ink-25);padding-top:2px}
+
+  footer{margin-top:24px;border-top:1px solid var(--ink);padding-top:12px;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--ink-60);
-  }
+    text-transform:uppercase;color:var(--ink-60)}
   .clear{background:none;border:1px solid var(--rule);color:var(--ink-60);cursor:pointer;
     font:inherit;padding:5px 10px}
   .clear:hover{border-color:var(--redline);color:var(--redline)}
@@ -157,171 +113,207 @@
 
 <div class="wrap">
   <header>
-    <div class="hd-top">
-      <h1>Ten Weeks<br>to <em>Oct 13</em></h1>
-      <div class="meta">
-        Bodyweight only · at home<br>
-        5 sessions / week · 7:00 AM<br>
-        Issued 05 Aug 2026
-      </div>
-    </div>
-    <div class="scale">
-      <div class="scale-track"><div class="scale-fill" id="fill"></div></div>
-      <div class="scale-ticks"><span>WK 1</span><span>WK 3</span><span>WK 5</span><span>WK 8</span><span>WK 10</span></div>
-      <div class="scale-read">
-        <span><b id="done">0</b> of <b id="total">0</b> exercises checked · <b id="pct">0%</b></span>
-        <button class="jump" id="jump">Go to today</button>
-      </div>
-    </div>
+    <h1>Neck &amp; Posture — <em>Daily</em></h1>
+    <div class="sub">Aug 28 2026 → Mar 30 2027 · checkpoint Oct 14</div>
   </header>
 
-  <main id="sheets"></main>
+  <div class="count">
+    <div class="stat"><b id="days">0</b><span>Days shown up</span></div>
+    <div class="stat"><b id="anchors">0</b><span>Neck blocks done</span></div>
+    <div class="milestone" id="ms"></div>
+  </div>
+
+  <div class="today-card" id="today"></div>
+
+  <h2>The rest of it — open only if you want to</h2>
+  <div id="weeks"></div>
 
   <footer>
-    <span>Add one rep per set each week. Stop two reps short of failure.</span>
-    <button class="clear" id="clear">Clear all checks</button>
+    <span>Missing days is expected. The neck block is the only thing that matters.</span>
+    <button class="clear" id="clear">Clear all</button>
   </footer>
 </div>
 
 <script>
-const KEY = "training:oct13:checks";
-const START = new Date(2026,7,5), END = new Date(2026,9,13);
-const DAYNAME = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const KEY = "posture:v2:checks";
+const START = new Date(2026,7,28), MILE = new Date(2026,9,14), END = new Date(2027,2,30);
+const DN = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const MO = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-const P1_END = new Date(2026,7,23), P2_END = new Date(2026,8,20);
-const phaseOf = d => d <= P1_END ? 0 : d <= P2_END ? 1 : 2;
-const PHASE_NAME = ["P1 Rebuild","P2 Build","P3 Peak"];
+const P2 = new Date(2026,9,15), P3 = new Date(2027,0,1);
+const ph = d => d < P2 ? 0 : d < P3 ? 1 : 2;
+const PH = ["P1 Anchor","P2 Build","P3 Strength"];
 
-const ex = (n,d)=>({n,d});
-
-const LOWER = [
-  {t:"Lower + Glutes", dur:"25 min", items:[
-    ex("Bodyweight squats","3 × 12"), ex("Reverse lunges","3 × 8 each leg"),
-    ex("Glute bridges","3 × 15"), ex("Wall sit","3 × 30 sec")]},
-  {t:"Lower + Glutes", dur:"27 min", items:[
-    ex("Bodyweight squats","3 × 15"), ex("Reverse lunges","3 × 10 each leg"),
-    ex("Single-leg glute bridge","3 × 10 each leg"), ex("Wall sit","3 × 45 sec"),
-    ex("Calf raises","3 × 20")]},
-  {t:"Lower + Glutes", dur:"30 min", items:[
-    ex("Slow-tempo squats","4 × 15, 3 sec down"), ex("Bulgarian split squat","3 × 10 each leg, back foot on couch"),
-    ex("Single-leg hip thrust","3 × 12 each leg, shoulders on couch"),
-    ex("Wall sit","3 × 60 sec"), ex("Calf raises","3 × 20")]}
+/* ---- the daily neck block: never skipped, never longer than 4 min ---- */
+const ANCHOR = [
+  { dur:"3 min", note:"Every day. Desk, couch, car, anywhere. This is the part that actually addresses the neck.",
+    items:[
+      {n:"Chin tucks", d:"10 × 5 sec hold",
+       h:"Sit or stand tall, eyes level. Slide your head straight back — double-chin, not looking down. You should feel it deep in the front of the neck, not in the throat."},
+      {n:"Doorway chest stretch", d:"2 × 30 sec",
+       h:"Forearm on the door frame at shoulder height, step through until you feel the stretch across the front of the shoulder."}
+    ]},
+  { dur:"4 min", note:"Every day. Wall angels added — they're the shoulder half of the same problem.",
+    items:[
+      {n:"Chin tucks", d:"12 × 5 sec hold", h:"Same as before. Add a light hand resistance on the forehead if it's gotten easy."},
+      {n:"Wall angels", d:"10 slow reps",
+       h:"Back flat to a wall, arms in a goalpost, backs of hands touching. Slide up and down without letting hands or lower back leave the wall."},
+      {n:"Doorway chest stretch", d:"2 × 30 sec", h:"Try it at three heights — low, shoulder, high — for 20 sec each."}
+    ]},
+  { dur:"5 min", note:"Every day. Thoracic extension added — this is the one that targets the upper-back curve directly.",
+    items:[
+      {n:"Chin tucks", d:"15 × 5 sec hold", h:"Add gentle hand resistance at the forehead."},
+      {n:"Thoracic extension over a towel", d:"10 slow reps",
+       h:"Roll a towel tight, lie on it across your upper back just below the shoulder blades. Hands behind head, extend back over it. Move the roll up an inch and repeat."},
+      {n:"Wall angels", d:"12 slow reps", h:"Slower is harder. Take 4 seconds up, 4 down."},
+      {n:"Doorway chest stretch", d:"2 × 30 sec", h:""}
+    ]}
 ];
-const PUSH = [
-  {t:"Push + Posture", dur:"25 min", items:[
-    ex("Incline pushups","3 × 10, hands on counter"), ex("Pike pushups","3 × 6"),
-    ex("Wall angels","3 × 10"), ex("Doorway chest stretch","2 × 30 sec"), ex("Dead bugs","3 × 8 each side")]},
-  {t:"Push + Posture", dur:"27 min", items:[
-    ex("Knee pushups","3 × 10"), ex("Pike pushups","3 × 8"),
-    ex("Wall angels","3 × 12"), ex("Floor Y-T-W raises","3 × 8 each shape"), ex("Dead bugs","3 × 10 each side")]},
-  {t:"Push + Posture", dur:"30 min", items:[
-    ex("Full pushups","4 × 8"), ex("Pike pushups","3 × 10"),
-    ex("Wall angels","3 × 15"), ex("Floor Y-T-W raises","3 × 10 each shape"), ex("Dead bugs","3 × 12 each side")]}
+
+/* ---- strength days: posture work FIRST, then everything else ---- */
+const A = [
+  {t:"Posture + Pull", dur:"15 min", items:[
+    {n:"Prone Y-T-W", d:"2 × 8 each shape", h:"Face down, arms out in each letter shape, lift just the arms. Thumbs up."},
+    {n:"Towel rows", d:"3 × 10", h:"Towel over a door handle, lean back, pull. Squeeze the shoulder blades."},
+    {n:"Superman hold", d:"3 × 20 sec", h:""}]},
+  {t:"Posture + Pull", dur:"18 min", items:[
+    {n:"Prone Y-T-W", d:"3 × 8 each shape", h:""},
+    {n:"Table rows", d:"3 × 8", h:"Lie under a sturdy table, grip the edge, pull your chest to it."},
+    {n:"Towel rows", d:"3 × 12", h:""},
+    {n:"Superman hold", d:"3 × 30 sec", h:""}]},
+  {t:"Posture + Pull", dur:"20 min", items:[
+    {n:"Prone Y-T-W", d:"3 × 10 each shape, slow", h:""},
+    {n:"Table rows", d:"4 × 10", h:""},
+    {n:"Towel rows", d:"3 × 15", h:""},
+    {n:"Superman hold", d:"3 × 40 sec", h:""}]}
 ];
-const PULL = [
-  {t:"Pull + Core", dur:"25 min", items:[
-    ex("Towel rows","3 × 10, towel over door handle"), ex("Superman hold","3 × 20 sec"),
-    ex("Bird dogs","3 × 8 each side"), ex("Side plank","2 × 20 sec each side")]},
-  {t:"Pull + Core", dur:"27 min", items:[
-    ex("Towel rows","3 × 12"), ex("Table rows","3 × 8, under a sturdy table"),
-    ex("Superman hold","3 × 30 sec"), ex("Bird dogs","3 × 10 each side"), ex("Side plank","3 × 30 sec each side")]},
-  {t:"Pull + Core", dur:"30 min", items:[
-    ex("Table rows","4 × 10"), ex("Towel rows","3 × 15"),
-    ex("Superman hold","3 × 40 sec"), ex("Hollow hold","3 × 20 sec"), ex("Side plank","3 × 45 sec each side")]}
+const B = [
+  {t:"Lower", dur:"15 min", items:[
+    {n:"Bodyweight squats", d:"3 × 12", h:""},
+    {n:"Reverse lunges", d:"2 × 8 each leg", h:""},
+    {n:"Glute bridges", d:"3 × 15", h:""}]},
+  {t:"Lower", dur:"18 min", items:[
+    {n:"Bodyweight squats", d:"3 × 15", h:""},
+    {n:"Reverse lunges", d:"3 × 10 each leg", h:""},
+    {n:"Single-leg glute bridge", d:"3 × 10 each", h:""},
+    {n:"Wall sit", d:"2 × 45 sec", h:""}]},
+  {t:"Lower", dur:"20 min", items:[
+    {n:"Slow-tempo squats", d:"4 × 15, 3 sec down", h:""},
+    {n:"Bulgarian split squat", d:"3 × 10 each", h:"Back foot on the couch."},
+    {n:"Single-leg hip thrust", d:"3 × 12 each", h:"Shoulders on the couch."},
+    {n:"Wall sit", d:"3 × 60 sec", h:""}]}
+];
+const C = [
+  {t:"Push + Core", dur:"15 min", items:[
+    {n:"Incline pushups", d:"3 × 10", h:"Hands on the kitchen counter."},
+    {n:"Dead bugs", d:"3 × 8 each side", h:"Low back stays pressed to the floor."},
+    {n:"Side plank", d:"2 × 20 sec each", h:""}]},
+  {t:"Push + Core", dur:"18 min", items:[
+    {n:"Knee pushups", d:"3 × 10", h:""},
+    {n:"Pike pushups", d:"3 × 8", h:""},
+    {n:"Dead bugs", d:"3 × 10 each side", h:""},
+    {n:"Side plank", d:"3 × 30 sec each", h:""}]},
+  {t:"Push + Core", dur:"20 min", items:[
+    {n:"Full pushups", d:"4 × 8", h:""},
+    {n:"Pike pushups", d:"3 × 10", h:""},
+    {n:"Hollow hold", d:"3 × 20 sec", h:""},
+    {n:"Side plank", d:"3 × 45 sec each", h:""}]}
 ];
 const CARDIO = [
-  {n:"Stair intervals", d:["6 rounds — up fast, walk down","8 rounds — up fast, walk down","10 rounds — up fast, walk down"]},
-  {n:"Podcast walk",    d:["15 min, brisk and easy","25 min, brisk","25 min, push the pace on hills"]},
-  {n:"Shadowboxing",    d:["5 rounds × 2 min","6 rounds × 2 min","8 rounds × 2 min"]},
-  {n:"HIIT circuit",    d:["4 rounds — high knees / jacks / mountain climbers, 30 on 30 off","6 rounds — high knees / jacks / mountain climbers, 30 on 30 off","8 rounds — high knees / jacks / mountain climbers, 30 on 30 off"]}
+  {n:"Stair intervals", d:["6 rounds","8 rounds","10 rounds"], h:"Up fast, walk down."},
+  {n:"Podcast walk", d:["15 min","20 min","25 min"], h:""},
+  {n:"Shadowboxing", d:["5 × 2 min","6 × 2 min","8 × 2 min"], h:""},
+  {n:"HIIT circuit", d:["4 rounds","6 rounds","8 rounds"], h:"High knees / jacks / mountain climbers, 30 on 30 off."}
 ];
 
-function session(d, p, cardioCount){
-  const w = d.getDay();
-  if (w===1) return LOWER[p];
-  if (w===3) return PUSH[p];
-  if (w===5) return PULL[p];
+function bonusFor(d){
+  const w = d.getDay(), p = ph(d);
+  if (w===1) return A[p];
+  if (w===3) return C[p];
+  if (w===5) return B[p];
   if (w===2 || w===4){
-    const c = CARDIO[cardioCount % 4];
-    return {t:"Cardio", dur:["20 min","25 min","20 min"][p], items:[
-      ex(c.n, c.d[p]), ex("Cooldown stretch","3 min — hips, calves, chest")]};
+    const wk = Math.floor((d - START)/6048e5);
+    const c = CARDIO[(wk*2 + (w===4?1:0)) % 4];
+    return {t:"Cardio", dur:["15 min","20 min","20 min"][p], items:[{n:c.n, d:c.d[p], h:c.h}]};
   }
-  if (w===6) return {t:"Free day", dur:"optional", optional:true, items:[ex("Walk, or nothing at all","optional")]};
-  return null; // Sunday
+  return null;
 }
 
+const key = d => `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
 let state = {};
 
-function render(){
-  const host = document.getElementById("sheets");
-  let html = "", cardioCount = 0, week = 0, open = false, total = 0;
+function itemHtml(id, it, checked, showHow){
+  return `<li><label><input type="checkbox" data-id="${id}"${checked?" checked":""}>
+    <span class="box"></span><span class="txt"><b>${it.n}</b> — <span>${it.d}</span></span></label>
+    ${showHow && it.h ? `<div class="howto">${it.h}</div>` : ""}</li>`;
+}
+
+function renderToday(){
+  const t = new Date(); t.setHours(0,0,0,0);
+  const d = t < START ? new Date(START) : t > END ? new Date(END) : t;
+  const p = ph(d), k = key(d), a = ANCHOR[p], b = bonusFor(d);
+  let h = `<div class="tc-head">
+      <span class="tc-date">${DN[d.getDay()]} ${MO[d.getMonth()]} ${d.getDate()}</span>
+      <span class="tc-title">Today</span></div>
+    <div class="blk">
+      <div class="blk-lbl">Neck block · ${a.dur} · every day</div>
+      <p class="blk-note">${a.note}</p>
+      <ul>${a.items.map((it,i)=>itemHtml(`${k}|a${i}`, it, state[`${k}|a${i}`], true)).join("")}</ul>
+    </div>`;
+  if (b) h += `<div class="blk bonus">
+      <div class="blk-lbl">If you have more in you · ${b.t} · ${b.dur}</div>
+      <ul>${b.items.map((it,i)=>itemHtml(`${k}|b${i}`, it, state[`${k}|b${i}`], true)).join("")}</ul>
+    </div>`;
+  else h += `<div class="blk bonus"><div class="blk-lbl">No session scheduled — neck block only</div></div>`;
+  document.getElementById("today").innerHTML = h;
+}
+
+function renderWeeks(){
+  let h = "", d = new Date(START), wk = 0;
   const today = new Date(); today.setHours(0,0,0,0);
-  const d = new Date(START);
-  let weekDays = [], weekStart = null;
-
-  const flush = () => {
-    if (!weekDays.length) return;
-    const p = phaseOf(weekDays[0].date);
-    const last = weekDays[weekDays.length-1].date;
-    html += `<section class="sheet"><div class="stub">
-        <div class="lbl">Week</div><div class="wk">${String(week).padStart(2,"0")}</div>
-        <div class="rng">${MON[weekStart.getMonth()]} ${weekStart.getDate()}<br>— ${MON[last.getMonth()]} ${last.getDate()}</div>
-        <div class="phase-tag phase-${p+1}">${PHASE_NAME[p]}</div>
-      </div><div class="days">${weekDays.map(x=>x.html).join("")}</div></section>`;
-    weekDays = [];
-  };
-
   while (d <= END){
-    if (d.getDay()===1 || weekStart===null){ flush(); week++; weekStart = new Date(d); }
-    const p = phaseOf(d);
-    const s = session(d, p, cardioCount);
-    if (s && s.t==="Cardio") cardioCount++;
-    const key = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
-    const isToday = d.getTime()===today.getTime();
-    const dateStr = `${DAYNAME[d.getDay()]} ${MON[d.getMonth()]} ${String(d.getDate()).padStart(2,"0")}`;
-    let dayHtml;
-    if (!s){
-      dayHtml = `<div class="day rest"><div class="dh"><span class="date">${dateStr}</span>
-        <span class="sess quiet">Rest</span></div></div>`;
-    } else {
-      const items = s.items.map((it,i)=>{
-        const id = `${key}|${i}`;
-        if (!s.optional) total++;
-        const on = state[id] ? " checked" : "";
-        return `<li class="${s.optional?"opt":""}"><label><input type="checkbox" data-id="${id}"${on}${s.optional?' data-opt="1"':''}>
-          <span class="box"></span><span class="txt"><b>${it.n}</b> — <span>${it.d}</span></span></label></li>`;
-      }).join("");
-      dayHtml = `<div class="day${isToday?" today":""}"${isToday?' id="today"':''}><div class="dh">
-        <span class="date">${dateStr}</span><span class="sess${s.optional?" quiet":""}">${s.t}</span>
-        ${isToday?'<span class="today-tag">Today</span>':''}<span class="dur">${s.dur}</span></div>
-        <ul>${items}</ul></div>`;
+    const ws = new Date(d);
+    let we = new Date(d); we.setDate(we.getDate() + (7 - (we.getDay()===0?7:we.getDay())));
+    if (we > END) we = new Date(END);
+    wk++;
+    const p = ph(ws), isNow = today >= ws && today <= we;
+    let rows = "", c = new Date(ws);
+    while (c <= we){
+      const b = bonusFor(c);
+      rows += `<div class="wk-day"><span class="d">${DN[c.getDay()]}</span>
+        <span>${b ? `<b>${b.t}</b> · ${b.dur}` : "neck block only"}</span></div>`;
+      c.setDate(c.getDate()+1);
     }
-    weekDays.push({date:new Date(d), html:dayHtml});
-    d.setDate(d.getDate()+1);
+    h += `<details${isNow?" open":""}><summary>
+        <span class="wk-n">WK ${String(wk).padStart(2,"0")}</span>
+        <span class="wk-rng">${MO[ws.getMonth()]} ${ws.getDate()} – ${MO[we.getMonth()]} ${we.getDate()}</span>
+        <span class="wk-ph ph${p+1}">${PH[p]}</span></summary>
+      <div class="wk-body"><b>Neck block every day (${ANCHOR[p].dur}).</b> Sessions below are optional.
+        ${rows}</div></details>`;
+    d = new Date(we); d.setDate(d.getDate()+1);
   }
-  flush();
-  host.innerHTML = html;
-  document.getElementById("total").textContent = total;
-  window.__total = total;
-  tally();
+  document.getElementById("weeks").innerHTML = h;
 }
 
 function tally(){
-  const boxes = [...document.querySelectorAll('input[type=checkbox]:not([data-opt])')];
-  const done = boxes.filter(b=>b.checked).length;
-  const pct = window.__total ? Math.round(done/window.__total*100) : 0;
-  document.getElementById("done").textContent = done;
-  document.getElementById("pct").textContent = pct + "%";
-  document.getElementById("fill").style.width = pct + "%";
+  const ks = Object.keys(state);
+  const days = new Set(ks.map(x=>x.split("|")[0])).size;
+  const anchorDays = new Set(ks.filter(x=>x.split("|")[1][0]==="a").map(x=>x.split("|")[0])).size;
+  document.getElementById("days").textContent = days;
+  document.getElementById("anchors").textContent = anchorDays;
+  const t = new Date(); t.setHours(0,0,0,0);
+  const left = Math.max(0, Math.round((MILE - t)/864e5));
+  document.getElementById("ms").innerHTML = left
+    ? `<b>${left} days</b><br>to Oct 14 checkpoint`
+    : `Checkpoint passed<br>keep going to Mar 30`;
 }
 
-let saveTimer;
+let timer;
 function save(){
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(()=>{
+  clearTimeout(timer);
+  timer = setTimeout(()=>{
     try { localStorage.setItem(KEY, JSON.stringify(state)); }
-    catch(e){ console.error("Could not save checks:", e); }
+    catch(e){ console.error("Could not save:", e); }
   }, 250);
 }
 
@@ -331,25 +323,11 @@ document.addEventListener("change", e=>{
   if (cb.checked) state[cb.dataset.id] = 1; else delete state[cb.dataset.id];
   tally(); save();
 });
-
-document.getElementById("jump").addEventListener("click", ()=>{
-  const el = document.getElementById("today");
-  (el || document.querySelector(".sheet")).scrollIntoView({behavior:"smooth", block:"center"});
-});
 document.getElementById("clear").addEventListener("click", ()=>{
-  if (!confirm("Clear every check from Aug 5 to Oct 13?")) return;
-  state = {};
-  document.querySelectorAll("input[type=checkbox]").forEach(b=>b.checked=false);
-  tally(); save();
+  if (!confirm("Clear every check?")) return;
+  state = {}; renderToday(); tally(); save();
 });
 
-(function(){
-  try {
-    const raw = localStorage.getItem(KEY);
-    if (raw) state = JSON.parse(raw);
-  } catch(e){ state = {}; }
-  render();
-  const el = document.getElementById("today");
-  if (el) el.scrollIntoView({block:"center"});
-})();
+try { const raw = localStorage.getItem(KEY); if (raw) state = JSON.parse(raw); } catch(e){ state = {}; }
+renderToday(); renderWeeks(); tally();
 </script>
